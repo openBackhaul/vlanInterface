@@ -39,6 +39,7 @@ Technology specific interface definition for VLAN interfaces according to IEEE 8
 
 ### Open Issue List
 - Thomas Seitz (Thomas.Seitz@openBackhaul.com)
-- to be provided
+- [vlanInterface/issues](../../issues)
 
 ### Comments
+./.
