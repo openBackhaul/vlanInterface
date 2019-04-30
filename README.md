@@ -5,8 +5,5 @@ Technology specific amendment to the LayerProtocol class for VLAN interfaces acc
 - Proposed by Telefonica, reviewed by Deutsche Telekom, Ericsson, Huawei, Infinera, Ceragon, Nokia and SIAE
 - under definition
 
-### Open Issue List
-- [bugtracker.openBackhaul.com](https://bugtracker.openBackhaul.com)
-
 ### Comments
 ./.
