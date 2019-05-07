@@ -1,28 +1,27 @@
 # vlanInterface
-Technology specific interface definition for VLAN interfaces according to IEEE 802.1Q
+Technology specific interface definition for VLAN interfaces according to IEEE 802.1Q and 802.1ad
 
 ### Branch
 - Thomas Seitz (Thomas.Seitz@openBackhaul.com)
-- 0.1.0-tsp.d.t : Use case driven model for the Transport SDN Pilot at Telefonica Germany
+- 1.0.0-tsp.d.t : Use case driven model for the Transport SDN Pilot at Telefonica Germany
 
 ### UML
 - Thomas Seitz (Thomas.Seitz@openBackhaul.com)
-- 0.1.0-tsp.190131.1552 : [190131 VlanPac.zip](./190131%20VlanPac.zip)
+- [VlanInterface_1.0.0-tsp.190507.1105](./VlanInterface_1.0.0-tsp.190507.1105.zip)
 
 ### Overview 
 - Thomas Seitz (Thomas.Seitz@openBackhaul.com)
-- 0.1.0-tsp.190131.1552+overview.1 : [190131 VlanPacCD.PNG](./190131%20VlanPacCD.PNG)
+- [VlanInterface_1.0.0-tsp.190507.1105+overview.1](./VlanInterface_1.0.0-tsp.190507.1105+overview.1.png)
 
 ### List of Classes
-- Thomas Seitz (Thomas.Seitz@openBackhaul.com)
+- Waseem Sattar (Waseem.Sattar@openBackhaul.com)
 - to be provided 
 
 ### GenDoc Export
 - Thomas Seitz (Thomas.Seitz@openBackhaul.com)
-- 0.1.0-tsp.190131.1552+gendoc.1 : [VlanPac_0.1.0-tsp.190131.1552+gendoc.2019-01-31-180548.docx](./VlanPac_0.1.0-tsp.190131.1552+gendoc.2019-01-31-180548.docx)
+- [VlanInterface_1.0.0-tsp.190507.1105+gendoc.1](./VlanInterface_1.0.0-tsp.190507.1105+gendoc.1.docx)
 
 ### YANG File
-- Kranti Appari (Kranti.Appari@openBackhaul.com)
 - to be provided 
 
 ### Interface Simulator
