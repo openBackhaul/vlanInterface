@@ -15,7 +15,8 @@ Technology specific interface definition for VLAN interfaces according to IEEE 8
 
 ### List of Classes
 - Waseem Sattar (Waseem.Sattar@openBackhaul.com)
-- to be provided 
+- [VlanInterface_1.0.0-tsp.190507.1105+classlist.1](./VlanInterface_1.0.0-tsp.190507.1105+classlist.1.txt) 
+
 
 ### GenDoc Export
 - Thomas Seitz (Thomas.Seitz@openBackhaul.com)
