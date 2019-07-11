@@ -17,10 +17,12 @@ Technology specific interface definition for VLAN interfaces according to IEEE 8
 - Waseem Sattar (Waseem.Sattar@openBackhaul.com)
 - [VlanInterface_1.0.0-tsp.190507.1105+classlist.1](./VlanInterface_1.0.0-tsp.190507.1105+classlist.1.txt) 
 
-
 ### GenDoc Export
 - Thomas Seitz (Thomas.Seitz@openBackhaul.com)
 - [VlanInterface_1.0.0-tsp.190507.1105+gendoc.1](./VlanInterface_1.0.0-tsp.190507.1105+gendoc.1.docx)
+
+### Augmentation Condition
+- When statement in Augmentation statement demands for LayerProtocol::layerProtocolName==LAYER_PROTOCOL_NAME_TYPE_VLAN_LAYER
 
 ### YANG File
 - to be provided 
