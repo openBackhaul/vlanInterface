@@ -7,19 +7,19 @@ Technology specific interface definition for VLAN interfaces according to IEEE 8
 
 ### UML
 - Thomas Seitz (Thomas.Seitz@openBackhaul.com)
-- [VlanInterface_1.0.0-tsp.190507.1105](./VlanInterface_1.0.0-tsp.190507.1105.zip)
+- [VlanInterface_1.0.0-tsp.190812.1840](./VlanInterface_1.0.0-tsp.190812.1840.zip)
 
 ### Overview 
 - Thomas Seitz (Thomas.Seitz@openBackhaul.com)
-- [VlanInterface_1.0.0-tsp.190507.1105+overview.1](./VlanInterface_1.0.0-tsp.190507.1105+overview.1.png)
+- [VlanInterface_1.0.0-tsp.190812.1840+overview.1](./VlanInterface_1.0.0-tsp.190812.1840+overview.1.png)
 
 ### List of Classes
 - Waseem Sattar (Waseem.Sattar@openBackhaul.com)
-- [VlanInterface_1.0.0-tsp.190507.1105+classlist.1](./VlanInterface_1.0.0-tsp.190507.1105+classlist.1.txt) 
+- to be provided
 
 ### GenDoc Export
 - Thomas Seitz (Thomas.Seitz@openBackhaul.com)
-- [VlanInterface_1.0.0-tsp.190507.1105+gendoc.1](./VlanInterface_1.0.0-tsp.190507.1105+gendoc.1.docx)
+- [VlanInterface_1.0.0-tsp.190812.1840+gendoc.1](./VlanInterface_1.0.0-tsp.190812.1840+gendoc.1.docx)
 
 ### Augmentation Condition
 - When statement in Augmentation statement demands for LayerProtocol::layerProtocolName==LAYER_PROTOCOL_NAME_TYPE_VLAN_LAYER
@@ -44,4 +44,4 @@ Technology specific interface definition for VLAN interfaces according to IEEE 8
 - [vlanInterface/issues](../../issues)
 
 ### Comments
-./.
+Starting with 1.0.0-tsp.190812.1840 the proposed VlanInterface definition is based on [ieee802-dot1q-bridge.yang](./ieee802-dot1q-bridge.yang), which has been published as a part of the IEEE Std 802.1Q-2018 in its revision 2018-03-07.
