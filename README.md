@@ -1,5 +1,5 @@
 # vlanInterface
-Technology specific interface definition for VLAN interfaces according to IEEE 802.1Q and 802.1ad
+Technology specific interface definition for VLAN interfaces according to IEEE 802.1Q-2018
 
 ### Branch
 - Thomas Seitz (Thomas.Seitz@openBackhaul.com)
