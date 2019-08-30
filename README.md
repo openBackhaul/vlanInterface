@@ -2,15 +2,15 @@
 Technology specific interface definition for VLAN interfaces according to IEEE 802.1Q-2018
 
 ### Branch
-- Thomas Seitz (Thomas.Seitz@openBackhaul.com)
+- Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
 - 1.0.0-tsp.d.t : Use case driven model for the Transport SDN Pilot at Telefonica Germany
 
 ### UML
-- Thomas Seitz (Thomas.Seitz@openBackhaul.com)
+- Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
 - [VlanInterface_1.0.0-tsp.190830.1625](./VlanInterface_1.0.0-tsp.190830.1625.zip)
 
 ### Overview 
-- Thomas Seitz (Thomas.Seitz@openBackhaul.com)
+- Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
 - [VlanInterface_1.0.0-tsp.190830.1625+overview.1](./VlanInterface_1.0.0-tsp.190830.1625+overview.1.png)
 
 ### List of Classes
@@ -18,7 +18,7 @@ Technology specific interface definition for VLAN interfaces according to IEEE 8
 - to be provided
 
 ### GenDoc Export
-- Thomas Seitz (Thomas.Seitz@openBackhaul.com)
+- Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
 - [VlanInterface_1.0.0-tsp.190830.1625+gendoc.1](./VlanInterface_1.0.0-tsp.190830.1625+gendoc.1.docx)
 
 ### Augmentation Condition
@@ -40,7 +40,7 @@ Technology specific interface definition for VLAN interfaces according to IEEE 8
 - Trial
 
 ### Open Issue List
-- Thomas Seitz (Thomas.Seitz@openBackhaul.com)
+- Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
 - [vlanInterface/issues](../../issues)
 
 ### Comments
