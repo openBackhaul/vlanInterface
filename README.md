@@ -7,11 +7,11 @@ Technology specific interface definition for VLAN interfaces according to IEEE 8
 
 ### UML
 - Thomas Seitz (Thomas.Seitz@openBackhaul.com)
-- [VlanInterface_1.0.0-tsp.190812.1840](./VlanInterface_1.0.0-tsp.190812.1840.zip)
+- [VlanInterface_1.0.0-tsp.190830.1625](./VlanInterface_1.0.0-tsp.190830.1625.zip)
 
 ### Overview 
 - Thomas Seitz (Thomas.Seitz@openBackhaul.com)
-- [VlanInterface_1.0.0-tsp.190812.1840+overview.1](./VlanInterface_1.0.0-tsp.190812.1840+overview.1.png)
+- [VlanInterface_1.0.0-tsp.190830.1625+overview.1](./VlanInterface_1.0.0-tsp.190830.1625+overview.1.png)
 
 ### List of Classes
 - Waseem Sattar (Waseem.Sattar@openBackhaul.com)
@@ -19,7 +19,7 @@ Technology specific interface definition for VLAN interfaces according to IEEE 8
 
 ### GenDoc Export
 - Thomas Seitz (Thomas.Seitz@openBackhaul.com)
-- [VlanInterface_1.0.0-tsp.190812.1840+gendoc.1](./VlanInterface_1.0.0-tsp.190812.1840+gendoc.1.docx)
+- [VlanInterface_1.0.0-tsp.190830.1625+gendoc.1](./VlanInterface_1.0.0-tsp.190830.1625+gendoc.1.docx)
 
 ### Augmentation Condition
 - When statement in Augmentation statement demands for LayerProtocol::layerProtocolName==LAYER_PROTOCOL_NAME_TYPE_VLAN_LAYER
