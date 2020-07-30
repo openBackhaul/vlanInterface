@@ -1,46 +1,41 @@
 # vlanInterface
-Technology specific interface definition for VLAN interfaces according to IEEE 802.1Q-2018
+- Technology specific interface definition for VLAN interfaces according to IEEE 802.1Q-2018
+- Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
 
 ### Branch
-- Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- 1.0.0-tsp.d.t : Use case driven model for the Transport SDN Pilot at Telefonica Germany
+- 1.0.0-tsp.d.t : Model for the Transport SDN Pilot at Telefonica Germany
 
 ### UML
-- Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- [VlanInterface_1.0.0-tsp.190830.1625](./VlanInterface_1.0.0-tsp.190830.1625.zip)
+- [VlanInterface_1.0.0-tsp.200730.1900](./VlanInterface_1.0.0-tsp.200730.1900.zip)
 
 ### Overview 
-- Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- [VlanInterface_1.0.0-tsp.190830.1625+overview.1](./VlanInterface_1.0.0-tsp.190830.1625+overview.1.png)
+- [VlanInterface_1.0.0-tsp.200730.1900+overview.1](./VlanInterface_1.0.0-tsp.200730.1900+overview.1.png)
 
 ### List of Classes
-- Waseem Sattar (Waseem.Sattar@openBackhaul.com)
 - to be provided
 
 ### GenDoc Export
-- Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- [VlanInterface_1.0.0-tsp.190830.1625+gendoc.1](./VlanInterface_1.0.0-tsp.190830.1625+gendoc.1.docx)
+- [VlanInterface_1.0.0-tsp.200730.1900+gendoc.1](./VlanInterface_1.0.0-tsp.200730.1900+gendoc.1.docx)
 
 ### Augmentation Condition
 - When statement in Augmentation statement demands for LayerProtocol::layerProtocolName==LAYER_PROTOCOL_NAME_TYPE_VLAN_LAYER
 
 ### YANG File
-- to be provided 
+- [VlanInterface_1.0.0-tsp.200730.1900+yang.1](./VlanInterface_1.0.0-tsp.200730.1900+yang.1.zip)
 
 ### Interface Simulator
-- not planned 
+- to be provided 
 
 ### Interface Validator
-- not planned
+- to be provided 
 
 ### Publication
-- not planned
+- Candidate for ONF TR-532 v2.0
 
-### Model Classification
-- Trial
+### Aspired Model Classification
+- Live Network
 
 ### Open Issue List
-- Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
 - [vlanInterface/issues](../../issues)
 
 ### Comments
