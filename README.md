@@ -23,6 +23,7 @@
 ### YANG File
 - [VlanInterface_1.0.0-tsp.200731.1235+yang.1](./VlanInterface_1.0.0-tsp.200731.1235+yang.1.zip)
 - [VlanInterface_1.0.0-tsp.200731.1235+yang.2](./VlanInterface_1.0.0-tsp.200731.1235+yang.2.zip) is correcting issues [#11](../../issues/11) and [#12](../../issues/12)
+- [VlanInterface_1.0.0-tsp.200731.1235+yang.3](./VlanInterface_1.0.0-tsp.200731.1235+yang.3.zip) is correcting issue [#13](../../issues/13)
 
 ### Interface Simulator
 - to be provided 
