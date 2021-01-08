@@ -21,7 +21,7 @@
 - When statement in Augmentation statement demands for LayerProtocol::layerProtocolName==LAYER_PROTOCOL_NAME_TYPE_VLAN_LAYER
 
 ### YANG File
-- [VlanInterface_1.0.0-tsp.210105.1210+yang.1](./VlanInterface_1.0.0-tsp.210105.1210+yang.1.zip)
+- [VlanInterface_1.0.0-tsp.210105.1210+yang.2](./VlanInterface_1.0.0-tsp.210105.1210+yang.2.zip)
 
 ### Interface Simulator
 - to be provided 
