@@ -6,22 +6,25 @@
 - 1.0.0-tsp.d.t : Model for the Transport SDN Pilot at Telefonica Germany
 
 ### UML
-- [VlanInterface_1.0.0-tsp.210105.1210](./VlanInterface_1.0.0-tsp.210105.1210.zip)
+- [VlanInterface_1.0.0-tsp.210105.1210](./VlanInterface_1.0.0-tsp.210105.1210.zip) (deprecated)
+- [VlanInterface_1.0.0-tsp.220324.1710](./VlanInterface_1.0.0-tsp.220324.1710.zip)
 
 ### Overview 
-- [VlanInterface_1.0.0-tsp.210105.1210+overview.1](./VlanInterface_1.0.0-tsp.210105.1210+overview.1.png)
+- [VlanInterface_1.0.0-tsp.210105.1210+overview.1](./VlanInterface_1.0.0-tsp.210105.1210+overview.1.png) (deprecated)
+- [VlanInterface_1.0.0-tsp.220324.1710+overview.1](./VlanInterface_1.0.0-tsp.220324.1710+overview.1.png)
 
 ### List of Classes
 - to be provided
 
 ### GenDoc Export
-- [VlanInterface_1.0.0-tsp.210105.1210+gendoc.1](./VlanInterface_1.0.0-tsp.210105.1210+gendoc.1.docx)
+- [VlanInterface_1.0.0-tsp.210105.1210+gendoc.1](./VlanInterface_1.0.0-tsp.210105.1210+gendoc.1.docx) (deprecated)
+- [VlanInterface_1.0.0-tsp.220324.1710+gendoc.1](./VlanInterface_1.0.0-tsp.220324.1710+gendoc.1.docx)
 
 ### Augmentation Condition
 - When statement in Augmentation statement demands for LayerProtocol::layerProtocolName==LAYER_PROTOCOL_NAME_TYPE_VLAN_LAYER
 
 ### YANG File
-- [VlanInterface_1.0.0-tsp.210105.1210+yang.2](./VlanInterface_1.0.0-tsp.210105.1210+yang.2.zip)
+- [VlanInterface_1.0.0-tsp.210105.1210+yang.2](./VlanInterface_1.0.0-tsp.210105.1210+yang.2.zip) (deprecated)
 
 ### Interface Simulator
 - to be provided 
