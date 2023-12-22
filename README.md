@@ -10,9 +10,6 @@
 ### Overview 
 - [VlanInterface_1.0.0-tsi.240104.1910+overview.1](./VlanInterface_1.0.0-tsi.240104.1910+overview.1.png)
 
-### List of Classes
-- to be provided
-
 ### GenDoc Export
 - [VlanInterface_1.0.0-tsi.240104.1910+gendoc.1](./VlanInterface_1.0.0-tsi.240104.1910+gendoc.1.docx)
 
