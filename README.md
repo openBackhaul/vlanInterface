@@ -26,7 +26,7 @@
 - not planned 
 
 ### Interface Validator
-- to be provided
+- [VlanInterface_1.0.0-tsi.240104.1910+validator.1](./VlanInterface_1.0.0-tsi.240104.1910+validator.1.zip)
 
 ### Publication
 - Candidate for ONF TR-532 v2.0 
