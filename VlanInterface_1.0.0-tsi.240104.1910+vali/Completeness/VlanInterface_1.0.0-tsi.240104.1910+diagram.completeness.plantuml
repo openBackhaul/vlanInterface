@@ -1,0 +1,51 @@
+@startuml VlanInterface_1.0.0-tsi.240104.1910+diagram.completeness
+skinparam responseMessageBelowArrow true
+
+title
+VlanInterface_1.0.0-tsi.240104.1910+testcase.completeness
+end title
+
+participant "Postman" as Postman
+participant "Data" as Data
+participant "Collection" as Collection
+
+participant "/control-construct?fields=..." as ListOfLTPUuidAndLidPairsAndNames
+
+participant "/vlan-interface-capability" as Capability
+participant "/vlan-interface-configuration" as Configuration
+
+group Preparation
+  Data --\\o Postman : {servers,\n   mountName,\n   kindOfReference,\n   suffixUrlEncodingIsRequired}
+  activate Postman
+  Postman --\\o Collection : {servers,\n   mountName,\n   kindOfReference,\n   suffixUrlEncodingIsRequired}
+
+  Collection --\\o Postman : {servers, mountName}
+  Postman -> ListOfLTPUuidAndLidPairsAndNames : {mountName}
+  Postman <-- ListOfLTPUuidAndLidPairsAndNames : {(uuid, localId, layerProtocolName)}
+  note right Postman
+    selection of VlanInterface
+  end note
+  Postman --\\o Collection : {uuid, localId}
+end
+
+group /vlan-interface-capability
+  Collection --\\o Postman : {mountName, uuid, localId}
+  Postman -> Capability : {mountName, uuid, localId}
+  Postman <-- Capability : {CapabilityClass}
+  note right Postman
+    schema validation
+  end note
+end
+
+group /vlan-interface-configuration
+  Collection --\\o Postman : {mountName, uuid, localId}
+  Postman -> Configuration : {mountName, uuid, localId}
+  Postman <-- Configuration : {ConfigurationClass}
+  note right Postman
+    schema validation
+  end note
+end
+
+deactivate Postman
+
+@enduml

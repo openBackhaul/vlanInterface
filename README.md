@@ -17,22 +17,22 @@
 - When statement in Augmentation statement demands for LayerProtocol::layerProtocolName==LAYER_PROTOCOL_NAME_TYPE_VLAN_LAYER
 
 ### YANG File
-- [VlanInterface_1.0.0-tsi.240104.1910+yang.1](./VlanInterface_1.0.0-tsi.240104.1910+yang.1.zip)
+- [VlanInterface_1.0.0-tsi.240104.1910+yang.1](./VlanInterface_1.0.0-tsi.240104.1910+yang/vlan-interface-1-0.yang)
 
-### JSON Schema
-- to be provided
+### Schema
+- [VlanInterface_1.0.0-tsi.240104.1910+schema](./VlanInterface_1.0.0-tsi.240104.1910+schema/)
 
 ### Interface Simulator
-- not planned 
+- [VlanInterface_1.0.0-tsi.240104.1910+simulator](./VlanInterface_1.0.0-tsi.240104.1910+simu/)
 
 ### Interface Validator
-- [VlanInterface_1.0.0-tsi.240104.1910+validator.1](./VlanInterface_1.0.0-tsi.240104.1910+validator.1.zip)
+- [VlanInterface_1.0.0-tsi.240104.1910+validator](./VlanInterface_1.0.0-tsi.240104.1910+vali/)
 
 ### Publication
-- Candidate for ONF TR-532 v2.0 
+- Published as a part of ONF TR-532 v2.0  
 
 ### Model Classification
-- Live Network
+- Operational in Live Network
 
 ### Open Issue List
 - [vlanInterface/issues](../../issues)

@@ -1,0 +1,1277 @@
+openapi: 3.0.1
+info:
+  title: VlanInterface_1.0.0-tsi.240104.1910+simulator.completeness
+  version: 1.0.0
+
+paths:
+########################################################################################################################
+#   VlanInterface_1.0.0-tsi.240104.1910+validator.completeness in static reference mode
+########################################################################################################################
+#
+# At Application
+# ==============
+#
+# Preparation => MountName=305250001, UUID=vlanInt1, LocalID=1
+  /core-model-1-4:network-control-domain=cache/control-construct=305250001:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getLtpList
+      summary: 'Provides list of LTPs from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'List of LTPs provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - core-model-1-4:control-construct
+                properties:
+                  core-model-1-4:control-construct:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - logical-termination-point
+                      properties:
+                        logical-termination-point:
+                          type: array
+                          items:
+                            type: object
+                            required:
+                              - uuid
+                              - layer-protocol
+                            properties:
+                              uuid:
+                                type: string
+                                enum:
+                                  - 'vlanInt1'
+                              layer-protocol:
+                                type: array
+                                items:
+                                  type: object
+                                  required:
+                                    - local-id
+                                    - layer-protocol-name
+                                  properties:
+                                    local-id:
+                                      type: string
+                                      enum:
+                                        - '1'
+                                    layer-protocol-name:
+                                      type: string
+                                      enum:
+                                        - 'vlan-interface-1-0:LAYER_PROTOCOL_NAME_TYPE_VLAN_LAYER'
+                example:
+                  core-model-1-4:control-construct:
+                    - logical-termination-point:
+                        - uuid: 'vlanInt1'
+                          layer-protocol:
+                            - local-id: '1'
+                              layer-protocol-name: 'vlan-interface-1-0:LAYER_PROTOCOL_NAME_TYPE_VLAN_LAYER'
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+  
+# Completeness of GET 200
+  /core-model-1-4:network-control-domain=cache/control-construct=305250001/logical-termination-point=vlanInt1/layer-protocol=1/vlan-interface-1-0:vlan-interface-pac/vlan-interface-capability:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedVlanInterfaceCapability
+      summary: 'Provides VlanInterfaceCapability from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'VlanInterfaceCapability provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - vlan-interface-1-0:vlan-interface-capability
+                properties:
+                  vlan-interface-1-0:vlan-interface-capability:
+                    $ref: '#/components/schemas/vlan-interface-capability'
+                example:
+                  vlan-interface-1-0:vlan-interface-capability:
+                    supported-sub-layer-protocol-name-list:
+                      - 'vlan-interface-1-0:SUB_LAYER_PROTOCOL_NAME_TYPE_C_VLAN_COMPONENT'
+                      - 'vlan-interface-1-0:SUB_LAYER_PROTOCOL_NAME_TYPE_S_VLAN_COMPONENT'
+                    supported-interface-kind-list:
+                      - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_C_VLAN_BRIDGE_PORT'
+                      - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_PROVIDER_NETWORK_PORT'
+                      - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_CUSTOMER_EDGE_PORT'
+                    tagging-and-mvrp-is-avail: true
+                    configuring-ingress-tag-filtering-is-avail: true
+                    ingress-vlan-id-filtering-is-avail: true
+                    available-pcp-bits-interpretation-kind-list:
+                      - 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_7P1D'
+                      - 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_6P2D'
+                      - 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_5P3D'
+                      - 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_8P0D'
+                    configuring-pcp-bits-decoding-is-avail: true
+                    configuring-pcp-bits-encoding-is-avail: true
+                    drop-eligible-indicator-is-avail: true
+                    number-of-available-priorities: 8
+                    received-priority-overwriting-is-avail: true
+                    vlan-id-translation-is-avail: true
+                    egress-vlan-id-translation-is-avail: true
+                    port-and-protocol-based-vlan-is-avail: true
+                    max-number-of-protocol-vlan-id-groupings: 4094
+                    service-access-priority-tagging-is-avail: true
+                    configuring-service-access-priority-mapping-is-avail: true
+                    priority-to-traffic-class-mapping-is-avail: true
+                    number-of-available-traffic-classes: 8
+                    restricted-automated-vlan-registration-is-avail: true
+                    admin-shut-down-is-avail: true
+                    untagged-pep-is-avail: true
+                    untagged-cep-is-avail: true
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+  /core-model-1-4:network-control-domain=cache/control-construct=305250001/logical-termination-point=vlanInt1/layer-protocol=1/vlan-interface-1-0:vlan-interface-pac/vlan-interface-configuration:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedVlanInterfaceConfiguration
+      summary: 'Provides VlanInterfaceConfiguration from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'VlanInterfaceConfiguration provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - vlan-interface-1-0:vlan-interface-configuration
+                properties:
+                  vlan-interface-1-0:vlan-interface-configuration:
+                    $ref: '#/components/schemas/vlan-interface-configuration'
+                example:
+                  vlan-interface-1-0:vlan-interface-configuration:
+                    interface-name: 'Interface name not yet defined.'
+                    sub-layer-protocol-name: 'vlan-interface-1-0:SUB_LAYER_PROTOCOL_NAME_TYPE_C_VLAN_COMPONENT'
+                    interface-kind: 'vlan-interface-1-0:INTERFACE_KIND_TYPE_C_VLAN_BRIDGE_PORT'
+                    default-vlan-id: '88'
+                    default-priority: 0
+                    ingress-tag-filtering: 'vlan-interface-1-0:INGRESS_TAG_FILTERING_TYPE_ALL_FRAMES'
+                    ingress-vlan-id-filtering-is-on: true
+                    pcp-bits-interpretation-kind: 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_8P0D'
+                    pcp-bit-to-priority-mapping-list:
+                      - to-be-decoded-pcp-bits-value: 0
+                        associated-priority-value: 7
+                        associated-drop-eligibility: true
+                    pcp-bits-encoding-mapping-list:
+                      - to-be-encoded-priority-value: 0
+                        to-be-encoded-drop-eligibility: true
+                        associated-pcp-bits-value: 0
+                    drop-eligible-indicator-is-on: true
+                    drop-eligible-encoding-is-required: true
+                    received-priority-overwriting-is-on: true
+                    received-priority-overwriting-list:
+                      - to-be-overwritten-priority-value: 1
+                        new-priority-value: 1
+                      - to-be-overwritten-priority-value: 0
+                        new-priority-value: 0
+                      - to-be-overwritten-priority-value: 2
+                        new-priority-value: 2
+                      - to-be-overwritten-priority-value: 3
+                        new-priority-value: 3
+                      - to-be-overwritten-priority-value: 4
+                        new-priority-value: 4
+                      - to-be-overwritten-priority-value: 5
+                        new-priority-value: 5
+                      - to-be-overwritten-priority-value: 6
+                        new-priority-value: 6
+                      - to-be-overwritten-priority-value: 7
+                        new-priority-value: 7
+                    vlan-id-translation-is-on: true
+                    external-to-internal-vlan-id-mapping-list:
+                      - external-vlan-id: 17
+                        internal-vlan-id: 71
+                    egress-vlan-id-translation-is-on: true
+                    internal-to-egress-vlan-id-mapping-list:
+                      - internal-vlan-id: 71
+                        egress-vlan-id: 17
+                    forwarded-protocol-vlan-id-grouping-list:
+                      - forwarded-protocol-group-id: 1
+                        forwarded-vlan-id-list:
+                          - '4001'
+                          - '4002'
+                          - '4003'
+                    service-access-priority-tagging-is-on: true
+                    service-access-priority-mapping-list:
+                      - c-vlan-priority-value: 1
+                        s-vlan-pcp-bits-value: 1
+                      - c-vlan-priority-value: 0
+                        s-vlan-pcp-bits-value: 0
+                      - c-vlan-priority-value: 2
+                        s-vlan-pcp-bits-value: 2
+                      - c-vlan-priority-value: 3
+                        s-vlan-pcp-bits-value: 3
+                      - c-vlan-priority-value: 4
+                        s-vlan-pcp-bits-value: 4
+                      - c-vlan-priority-value: 5
+                        s-vlan-pcp-bits-value: 5
+                      - c-vlan-priority-value: 6
+                        s-vlan-pcp-bits-value: 6
+                      - c-vlan-priority-value: 7
+                        s-vlan-pcp-bits-value: 7
+                    priority-to-traffic-class-mapping-list:
+                      - priority-value: 1
+                        traffic-class-value: 1
+                      - priority-value: 2
+                        traffic-class-value: 2
+                      - priority-value: 0
+                        traffic-class-value: 2
+                      - priority-value: 5
+                        traffic-class-value: 0
+                      - priority-value: 6
+                        traffic-class-value: 6
+                      - priority-value: 3
+                        traffic-class-value: 3
+                      - priority-value: 4
+                        traffic-class-value: 4
+                      - priority-value: 7
+                        traffic-class-value: 7
+                    restricted-automated-vlan-registration-is-on: true
+                    admin-point-to-point: 'vlan-interface-1-0:ADMIN_POINT_TO_POINT_TYPE_NOT_YET_DEFINED'
+                    forwarded-cvlan-id-to-svlan-id-list:
+                      - c-vlan-id: 0
+                        s-vlan-id: 0
+                        s-vlan-priority-kind: 'vlan-interface-1-0:SVLAN_PRIORITY_KIND_TYPE_NONE'
+                        fixed-svlan-priority: 0
+                        untagged-pep: true
+                        untagged-cep: true
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+
+
+#
+# At Controller (copy from above, different paths, less parameters, basicAuth, no headers)
+# =============
+#
+# Preparation => MountName=305250001, UUID=vlanInt1, LocalID=1
+  /rests/data/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/core-model-1-4:control-construct:
+    parameters:
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getLtpList
+      summary: 'Provides list of LTPs from device'
+      tags:
+        - IndividualServices
+      security:
+        - basicAuth: []
+      responses:
+        '200':
+          description: 'List of LTPs provided from device'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - core-model-1-4:control-construct
+                properties:
+                  core-model-1-4:control-construct:
+                    type: object
+                    required:
+                      - logical-termination-point
+                    properties:
+                      logical-termination-point:
+                        type: array
+                        items:
+                          type: object
+                          required:
+                            - uuid
+                            - layer-protocol
+                          properties:
+                            uuid:
+                              type: string
+                              enum:
+                                - 'vlanInt1'
+                            layer-protocol:
+                              type: array
+                              items:
+                                type: object
+                                required:
+                                  - local-id
+                                  - layer-protocol-name
+                                properties:
+                                  local-id:
+                                    type: string
+                                    enum:
+                                      - '1'
+                                  layer-protocol-name:
+                                    type: string
+                                    enum:
+                                      - 'vlan-interface-1-0:LAYER_PROTOCOL_NAME_TYPE_VLAN_LAYER'
+                example:
+                  core-model-1-4:control-construct:
+                    logical-termination-point:
+                      - uuid: 'vlanInt1'
+                        layer-protocol:
+                          - local-id: '1'
+                            layer-protocol-name: 'vlan-interface-1-0:LAYER_PROTOCOL_NAME_TYPE_VLAN_LAYER'
+
+# Completeness of GET 200
+  /rests/data/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/core-model-1-4:control-construct/logical-termination-point=vlanInt1/layer-protocol=1/vlan-interface-1-0:vlan-interface-pac/vlan-interface-capability:
+    parameters:
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedVlanInterfaceCapability
+      summary: 'Provides VlanInterfaceCapability from device'
+      tags:
+        - IndividualServices
+      security:
+        - basicAuth: []
+      responses:
+        '200':
+          description: 'VlanInterfaceCapability provided from device'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - vlan-interface-1-0:vlan-interface-capability
+                properties:
+                  vlan-interface-1-0:vlan-interface-capability:
+                    $ref: '#/components/schemas/vlan-interface-capability'
+                example:
+                  vlan-interface-1-0:vlan-interface-capability:
+                    supported-sub-layer-protocol-name-list:
+                      - 'vlan-interface-1-0:SUB_LAYER_PROTOCOL_NAME_TYPE_C_VLAN_COMPONENT'
+                      - 'vlan-interface-1-0:SUB_LAYER_PROTOCOL_NAME_TYPE_S_VLAN_COMPONENT'
+                    supported-interface-kind-list:
+                      - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_C_VLAN_BRIDGE_PORT'
+                      - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_PROVIDER_NETWORK_PORT'
+                      - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_CUSTOMER_EDGE_PORT'
+                    tagging-and-mvrp-is-avail: true
+                    configuring-ingress-tag-filtering-is-avail: true
+                    ingress-vlan-id-filtering-is-avail: true
+                    available-pcp-bits-interpretation-kind-list:
+                      - 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_7P1D'
+                      - 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_6P2D'
+                      - 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_5P3D'
+                      - 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_8P0D'
+                    configuring-pcp-bits-decoding-is-avail: true
+                    configuring-pcp-bits-encoding-is-avail: true
+                    drop-eligible-indicator-is-avail: true
+                    number-of-available-priorities: 8
+                    received-priority-overwriting-is-avail: true
+                    vlan-id-translation-is-avail: true
+                    egress-vlan-id-translation-is-avail: true
+                    port-and-protocol-based-vlan-is-avail: true
+                    max-number-of-protocol-vlan-id-groupings: 4094
+                    service-access-priority-tagging-is-avail: true
+                    configuring-service-access-priority-mapping-is-avail: true
+                    priority-to-traffic-class-mapping-is-avail: true
+                    number-of-available-traffic-classes: 8
+                    restricted-automated-vlan-registration-is-avail: true
+                    admin-shut-down-is-avail: true
+                    untagged-pep-is-avail: true
+                    untagged-cep-is-avail: true
+  /rests/data/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/core-model-1-4:control-construct/logical-termination-point=vlanInt1/layer-protocol=1/vlan-interface-1-0:vlan-interface-pac/vlan-interface-configuration:
+    parameters:
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedVlanInterfaceConfiguration
+      summary: 'Provides VlanInterfaceConfiguration from device'
+      tags:
+        - IndividualServices
+      security:
+        - basicAuth: []
+      responses:
+        '200':
+          description: 'VlanInterfaceConfiguration provided from device'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - vlan-interface-1-0:vlan-interface-configuration
+                properties:
+                  vlan-interface-1-0:vlan-interface-configuration:
+                    $ref: '#/components/schemas/vlan-interface-configuration'
+                example:
+                  vlan-interface-1-0:vlan-interface-configuration:
+                    interface-name: 'Interface name not yet defined.'
+                    sub-layer-protocol-name: 'vlan-interface-1-0:SUB_LAYER_PROTOCOL_NAME_TYPE_C_VLAN_COMPONENT'
+                    interface-kind: 'vlan-interface-1-0:INTERFACE_KIND_TYPE_C_VLAN_BRIDGE_PORT'
+                    default-vlan-id: '88'
+                    default-priority: 0
+                    ingress-tag-filtering: 'vlan-interface-1-0:INGRESS_TAG_FILTERING_TYPE_ALL_FRAMES'
+                    ingress-vlan-id-filtering-is-on: true
+                    pcp-bits-interpretation-kind: 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_8P0D'
+                    pcp-bit-to-priority-mapping-list:
+                      - to-be-decoded-pcp-bits-value: 0
+                        associated-priority-value: 7
+                        associated-drop-eligibility: true
+                    pcp-bits-encoding-mapping-list:
+                      - to-be-encoded-priority-value: 0
+                        to-be-encoded-drop-eligibility: true
+                        associated-pcp-bits-value: 0
+                    drop-eligible-indicator-is-on: true
+                    drop-eligible-encoding-is-required: true
+                    received-priority-overwriting-is-on: true
+                    received-priority-overwriting-list:
+                      - to-be-overwritten-priority-value: 1
+                        new-priority-value: 1
+                      - to-be-overwritten-priority-value: 0
+                        new-priority-value: 0
+                      - to-be-overwritten-priority-value: 2
+                        new-priority-value: 2
+                      - to-be-overwritten-priority-value: 3
+                        new-priority-value: 3
+                      - to-be-overwritten-priority-value: 4
+                        new-priority-value: 4
+                      - to-be-overwritten-priority-value: 5
+                        new-priority-value: 5
+                      - to-be-overwritten-priority-value: 6
+                        new-priority-value: 6
+                      - to-be-overwritten-priority-value: 7
+                        new-priority-value: 7
+                    vlan-id-translation-is-on: true
+                    external-to-internal-vlan-id-mapping-list:
+                      - external-vlan-id: 17
+                        internal-vlan-id: 71
+                    egress-vlan-id-translation-is-on: true
+                    internal-to-egress-vlan-id-mapping-list:
+                      - internal-vlan-id: 71
+                        egress-vlan-id: 17
+                    forwarded-protocol-vlan-id-grouping-list:
+                      - forwarded-protocol-group-id: 1
+                        forwarded-vlan-id-list:
+                          - '4001'
+                          - '4002'
+                          - '4003'
+                    service-access-priority-tagging-is-on: true
+                    service-access-priority-mapping-list:
+                      - c-vlan-priority-value: 1
+                        s-vlan-pcp-bits-value: 1
+                      - c-vlan-priority-value: 0
+                        s-vlan-pcp-bits-value: 0
+                      - c-vlan-priority-value: 2
+                        s-vlan-pcp-bits-value: 2
+                      - c-vlan-priority-value: 3
+                        s-vlan-pcp-bits-value: 3
+                      - c-vlan-priority-value: 4
+                        s-vlan-pcp-bits-value: 4
+                      - c-vlan-priority-value: 5
+                        s-vlan-pcp-bits-value: 5
+                      - c-vlan-priority-value: 6
+                        s-vlan-pcp-bits-value: 6
+                      - c-vlan-priority-value: 7
+                        s-vlan-pcp-bits-value: 7
+                    priority-to-traffic-class-mapping-list:
+                      - priority-value: 1
+                        traffic-class-value: 1
+                      - priority-value: 2
+                        traffic-class-value: 2
+                      - priority-value: 0
+                        traffic-class-value: 2
+                      - priority-value: 5
+                        traffic-class-value: 0
+                      - priority-value: 6
+                        traffic-class-value: 6
+                      - priority-value: 3
+                        traffic-class-value: 3
+                      - priority-value: 4
+                        traffic-class-value: 4
+                      - priority-value: 7
+                        traffic-class-value: 7
+                    restricted-automated-vlan-registration-is-on: true
+                    admin-point-to-point: 'vlan-interface-1-0:ADMIN_POINT_TO_POINT_TYPE_NOT_YET_DEFINED'
+                    forwarded-cvlan-id-to-svlan-id-list:
+                      - c-vlan-id: 0
+                        s-vlan-id: 0
+                        s-vlan-priority-kind: 'vlan-interface-1-0:SVLAN_PRIORITY_KIND_TYPE_NONE'
+                        fixed-svlan-priority: 0
+                        untagged-pep: true
+                        untagged-cep: true
+
+
+########################################################################################################################
+#   Generic Paths
+########################################################################################################################
+  /generic/core-model-1-4:network-control-domain=cache/control-construct={mountName}/logical-termination-point={uuid}/layer-protocol={localId}/vlan-interface-1-0:vlan-interface-pac/vlan-interface-capability:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedVlanInterfaceCapability
+      summary: 'Provides VlanInterfaceCapability from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'VlanInterfaceCapability provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - vlan-interface-1-0:vlan-interface-capability
+                properties:
+                  vlan-interface-1-0:vlan-interface-capability:
+                    $ref: '#/components/schemas/vlan-interface-capability'
+                example:
+                  vlan-interface-1-0:vlan-interface-capability:
+                    supported-sub-layer-protocol-name-list:
+                      - 'vlan-interface-1-0:SUB_LAYER_PROTOCOL_NAME_TYPE_D_BRIDGE_COMPONENT'
+                    supported-interface-kind-list:
+                      - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_D_BRIDGE_PORT'
+                    tagging-and-mvrp-is-avail: true
+                    configuring-ingress-tag-filtering-is-avail: true
+                    ingress-vlan-id-filtering-is-avail: true
+                    available-pcp-bits-interpretation-kind-list:
+                      - 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_8P0D'
+                    configuring-pcp-bits-decoding-is-avail: true
+                    configuring-pcp-bits-encoding-is-avail: true
+                    drop-eligible-indicator-is-avail: true
+                    number-of-available-priorities: 0
+                    received-priority-overwriting-is-avail: true
+                    vlan-id-translation-is-avail: true
+                    egress-vlan-id-translation-is-avail: true
+                    port-and-protocol-based-vlan-is-avail: true
+                    max-number-of-protocol-vlan-id-groupings: 0
+                    service-access-priority-tagging-is-avail: true
+                    configuring-service-access-priority-mapping-is-avail: true
+                    priority-to-traffic-class-mapping-is-avail: true
+                    number-of-available-traffic-classes: 0
+                    restricted-automated-vlan-registration-is-avail: true
+                    admin-shut-down-is-avail: true
+                    untagged-pep-is-avail: true
+                    untagged-cep-is-avail: true
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+        '4XX':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        '500':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        default:
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+  /generic/core-model-1-4:network-control-domain=cache/control-construct={mountName}/logical-termination-point={uuid}/layer-protocol={localId}/vlan-interface-1-0:vlan-interface-pac/vlan-interface-configuration:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedVlanInterfaceConfiguration
+      summary: 'Provides VlanInterfaceConfiguration from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'VlanInterfaceConfiguration provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - vlan-interface-1-0:vlan-interface-configuration
+                properties:
+                  vlan-interface-1-0:vlan-interface-configuration:
+                    $ref: '#/components/schemas/vlan-interface-configuration'
+                example:
+                  vlan-interface-1-0:vlan-interface-configuration:
+                    interface-name: 'string'
+                    sub-layer-protocol-name: 'vlan-interface-1-0:SUB_LAYER_PROTOCOL_NAME_TYPE_D_BRIDGE_COMPONENT'
+                    interface-kind: 'vlan-interface-1-0:INTERFACE_KIND_TYPE_D_BRIDGE_PORT'
+                    default-vlan-id: 'string'
+                    default-priority: 0
+                    ingress-tag-filtering: >-
+                      vlan-interface-1-0:INGRESS_TAG_FILTERING_TYPE_UNTAGGED_AND_PRIORITY_FRAMES_ONLY
+                    ingress-vlan-id-filtering-is-on: true
+                    pcp-bits-interpretation-kind: 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_8P0D'
+                    pcp-bit-to-priority-mapping-list:
+                      - to-be-decoded-pcp-bits-value: 0
+                        associated-priority-value: 7
+                        associated-drop-eligibility: true
+                    pcp-bits-encoding-mapping-list:
+                      - to-be-encoded-priority-value: 0
+                        to-be-encoded-drop-eligibility: true
+                        associated-pcp-bits-value: 0
+                    drop-eligible-indicator-is-on: true
+                    drop-eligible-encoding-is-required: true
+                    received-priority-overwriting-is-on: true
+                    received-priority-overwriting-list:
+                      - to-be-overwritten-priority-value: 0
+                        new-priority-value: 0
+                    vlan-id-translation-is-on: true
+                    external-to-internal-vlan-id-mapping-list:
+                      - external-vlan-id: 0
+                        internal-vlan-id: 0
+                    egress-vlan-id-translation-is-on: true
+                    internal-to-egress-vlan-id-mapping-list:
+                      - internal-vlan-id: 0
+                        egress-vlan-id: 0
+                    forwarded-protocol-vlan-id-grouping-list:
+                      - forwarded-protocol-group-id: 0
+                        forwarded-vlan-id-list:
+                          - 'string'
+                    service-access-priority-tagging-is-on: true
+                    service-access-priority-mapping-list:
+                      - c-vlan-priority-value: 0
+                        s-vlan-pcp-bits-value: 0
+                    priority-to-traffic-class-mapping-list:
+                      - priority-value: 7
+                        traffic-class-value: 7
+                    restricted-automated-vlan-registration-is-on: true
+                    admin-point-to-point: 'vlan-interface-1-0:ADMIN_POINT_TO_POINT_TYPE_FORCE_TRUE'
+                    forwarded-cvlan-id-to-svlan-id-list:
+                      - c-vlan-id: 0
+                        s-vlan-id: 0
+                        s-vlan-priority-kind: 'vlan-interface-1-0:SVLAN_PRIORITY_KIND_TYPE_NONE'
+                        fixed-svlan-priority: 0
+                        untagged-pep: true
+                        untagged-cep: true
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+        '4XX':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        '500':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        default:
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+
+
+########################################################################################################################
+#   Common Components
+########################################################################################################################
+components:
+  parameters:
+    user:
+      name: user
+      in: header
+      required: true
+      schema:
+        type: string
+        example: 'User Name'
+      description: 'User identifier from the system starting the service call'
+    originator:
+      name: originator
+      in: header
+      required: true
+      schema:
+        type: string
+        minLength: 3
+        example: 'Resolver'
+      description: >
+        'Identification for the system consuming the API, as defined in
+         [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]'
+    x-correlator:
+      name: x-correlator
+      in: header
+      required: true
+      schema:
+        type: string
+        pattern: '^[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}$'
+        description: 'Empty string accepted from external applications.'
+        example: '550e8400-e29b-11d4-a716-446655440000'
+      description: 'UUID for the service execution flow that allows to correlate requests and responses'
+    trace-indicator:
+      name: trace-indicator
+      in: header
+      required: true
+      schema:
+        type: string
+        pattern: '^([0-9]+)(\.([0-9]+))*$'
+        description: 'Empty string accepted from external applications.'
+        example: '1.3.1'
+      description: 'Sequence of request numbers along the flow'
+    customer-journey:
+      name: customer-journey
+      in: header
+      required: true
+      schema:
+        type: string
+        example: 'Unknown value'
+      description: 'Holds information supporting customer’s journey to which the execution applies'
+    mountName:
+      name: mountName
+      in: path
+      required: true
+      schema:
+        type: string
+        example: '222250001'
+      description: 'The mountName of the device that is addressed by the request'
+    uuid:
+      name: uuid
+      in: path
+      required: true
+      schema:
+        type: string
+        example: 'LTP-MWPS-TTP-1-1'
+      description: 'Instance identifier that is unique within the device'
+    uuid1:
+      name: uuid1
+      in: path
+      required: true
+      schema:
+        type: string
+        example: 'LTP-MWPS-TTP-1-1'
+      description: 'Another instance identifier that is unique within the device'
+    localId:
+      name: localId
+      in: path
+      required: true
+      schema:
+        type: string
+        example: 'LP-MWPS-TTP-1-1'
+      description: 'Instance identifier that is unique within its list'
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+        example: 'node(node-id;netconf-node-topology:connection-status)'
+      description: 'Query parameter to filter ressources according to RFC8040 fields filter spec'
+  responses:
+    responseForErroredServiceRequests:
+      description: 'Response in case of errored service requests'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/errorDescription'
+      headers:
+        x-correlator:
+          schema:
+            type: string
+            pattern: '^[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}$'
+            example: '550e8400-e29b-11d4-a716-446655440000'
+          description: 'UUID for the service execution flow that allows to correlate requests and responses. Its value must be identical at the response compared with its corresponding request'
+        exec-time:
+          schema:
+            type: integer
+            example: 1100
+          description: 'Value written by the service provider, reporting the total elapsed time for the execution, including all the additional processing needed to retrieve the data from the backend service. Expressed in milliseconds'
+        backend-time:
+          schema:
+            type: integer
+            example: 850
+          description: 'Value written by the service provider, reporting the elapsed time for data retrieval from the backend (service invocation, database access…). Expressed in milliseconds'
+    responseForErroredOamRequests:
+      description: 'Response in case of errored OaM requests'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/errorDescription'
+  headers:
+    x-correlator:
+      schema:
+        type: string
+        example: '550e8400-e29b-11d4-a716-446655440000'
+      description: 'UUID for the service execution flow that allows to correlate requests and responses. Its value must be identical at the response compared with its corresponding request'
+    exec-time:
+      schema:
+        type: integer
+        example: 1100
+      description: 'Value written by the service provider, reporting the total elapsed time for the execution, including all the additional processing needed to retrieve the data from the backend service. Expressed in milliseconds'
+    backend-time:
+      schema:
+        type: integer
+        example: 850
+      description: 'Value written by the service provider, reporting the elapsed time for data retrieval from the backend (service invocation, database access…). Expressed in milliseconds'
+    life-cycle-state:
+      schema:
+        type: string
+        enum:
+          - 'EXPERIMENTAL'
+          - 'OPERATIONAL'
+          - 'DEPRECATED'
+          - 'OBSOLETE'
+          - 'UNKNOWN'
+          - 'NOT_YET_DEFINED'
+        example: 'EXPERIMENTAL'
+  schemas:
+    errorDescription:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+
+    vlan-interface-capability:
+      type: object
+      required:
+        - tagging-and-mvrp-is-avail
+        - configuring-ingress-tag-filtering-is-avail
+        - ingress-vlan-id-filtering-is-avail
+        - configuring-pcp-bits-decoding-is-avail
+        - configuring-pcp-bits-encoding-is-avail
+        - drop-eligible-indicator-is-avail
+        - number-of-available-priorities
+        - received-priority-overwriting-is-avail
+        - vlan-id-translation-is-avail
+        - egress-vlan-id-translation-is-avail
+        - port-and-protocol-based-vlan-is-avail
+        - max-number-of-protocol-vlan-id-groupings
+        - service-access-priority-tagging-is-avail
+        - configuring-service-access-priority-mapping-is-avail
+        - priority-to-traffic-class-mapping-is-avail
+        - number-of-available-traffic-classes
+        - restricted-automated-vlan-registration-is-avail
+        - admin-shut-down-is-avail
+        - untagged-pep-is-avail
+        - untagged-cep-is-avail
+      properties:
+        supported-sub-layer-protocol-name-list:
+          type: array
+          minItems: 0
+          items:
+            type: string
+            enum:
+              - 'vlan-interface-1-0:SUB_LAYER_PROTOCOL_NAME_TYPE_D_BRIDGE_COMPONENT'
+              - 'vlan-interface-1-0:SUB_LAYER_PROTOCOL_NAME_TYPE_C_VLAN_COMPONENT'
+              - 'vlan-interface-1-0:SUB_LAYER_PROTOCOL_NAME_TYPE_S_VLAN_COMPONENT'
+              - 'vlan-interface-1-0:SUB_LAYER_PROTOCOL_NAME_TYPE_EDGE_RELAY_COMPONENT'
+              - 'vlan-interface-1-0:SUB_LAYER_PROTOCOL_NAME_TYPE_NOT_YET_DEFINED'
+        supported-interface-kind-list:
+          type: array
+          minItems: 0
+          items:
+            type: string
+            enum:
+              - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_D_BRIDGE_PORT'
+              - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_C_VLAN_BRIDGE_PORT'
+              - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_CUSTOMER_EDGE_PORT'
+              - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_PROVIDER_EDGE_PORT'
+              - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_CUSTOMER_NETWORK_PORT'
+              - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_PROVIDER_NETWORK_PORT'
+              - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_CUSTOMER_BACKBONE_PORT'
+              - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_REMOTE_CUSTOMER_ACCESS_PORT'
+              - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_VIRTUAL_INSTANCE_PORT'
+              - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_STATION_FACING_BRIDGE_PORT'
+              - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_UPLINK_ACCESS_PORT'
+              - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_UPLINK_RELAY_PORT'
+              - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_NOT_YET_DEFINED'
+        tagging-and-mvrp-is-avail:
+          type: boolean
+        configuring-ingress-tag-filtering-is-avail:
+          type: boolean
+        ingress-vlan-id-filtering-is-avail:
+          type: boolean
+        available-pcp-bits-interpretation-kind-list:
+          type: array
+          minItems: 0
+          items:
+            type: string
+            enum:
+              - 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_8P0D'
+              - 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_7P1D'
+              - 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_6P2D'
+              - 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_5P3D'
+              - 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_NOT_YET_DEFINED'
+        configuring-pcp-bits-decoding-is-avail:
+          type: boolean
+        configuring-pcp-bits-encoding-is-avail:
+          type: boolean
+        drop-eligible-indicator-is-avail:
+          type: boolean
+        number-of-available-priorities:
+          type: integer
+          format: int8
+        received-priority-overwriting-is-avail:
+          type: boolean
+        vlan-id-translation-is-avail:
+          type: boolean
+        egress-vlan-id-translation-is-avail:
+          type: boolean
+        port-and-protocol-based-vlan-is-avail:
+          type: boolean
+        max-number-of-protocol-vlan-id-groupings:
+          type: integer
+          format: int16
+        service-access-priority-tagging-is-avail:
+          type: boolean
+        configuring-service-access-priority-mapping-is-avail:
+          type: boolean
+        priority-to-traffic-class-mapping-is-avail:
+          type: boolean
+        number-of-available-traffic-classes:
+          type: integer
+          format: int8
+        restricted-automated-vlan-registration-is-avail:
+          type: boolean
+        admin-shut-down-is-avail:
+          type: boolean
+        untagged-pep-is-avail:
+          type: boolean
+        untagged-cep-is-avail:
+          type: boolean
+    vlan-interface-configuration:
+      type: object
+      required:
+        - interface-name
+        - sub-layer-protocol-name
+        - interface-kind
+        - default-vlan-id
+        - default-priority
+        - ingress-tag-filtering
+        - ingress-vlan-id-filtering-is-on
+        - pcp-bits-interpretation-kind
+        - drop-eligible-indicator-is-on
+        - drop-eligible-encoding-is-required
+        - received-priority-overwriting-is-on
+        - vlan-id-translation-is-on
+        - egress-vlan-id-translation-is-on
+        - service-access-priority-tagging-is-on
+        - restricted-automated-vlan-registration-is-on
+        - admin-point-to-point
+      properties:
+        interface-name:
+          type: string
+        sub-layer-protocol-name:
+          type: string
+          enum:
+            - 'vlan-interface-1-0:SUB_LAYER_PROTOCOL_NAME_TYPE_D_BRIDGE_COMPONENT'
+            - 'vlan-interface-1-0:SUB_LAYER_PROTOCOL_NAME_TYPE_C_VLAN_COMPONENT'
+            - 'vlan-interface-1-0:SUB_LAYER_PROTOCOL_NAME_TYPE_S_VLAN_COMPONENT'
+            - 'vlan-interface-1-0:SUB_LAYER_PROTOCOL_NAME_TYPE_EDGE_RELAY_COMPONENT'
+            - 'vlan-interface-1-0:SUB_LAYER_PROTOCOL_NAME_TYPE_NOT_YET_DEFINED'
+        interface-kind:
+          type: string
+          enum:
+            - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_D_BRIDGE_PORT'
+            - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_C_VLAN_BRIDGE_PORT'
+            - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_CUSTOMER_EDGE_PORT'
+            - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_PROVIDER_EDGE_PORT'
+            - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_CUSTOMER_NETWORK_PORT'
+            - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_PROVIDER_NETWORK_PORT'
+            - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_CUSTOMER_BACKBONE_PORT'
+            - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_REMOTE_CUSTOMER_ACCESS_PORT'
+            - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_VIRTUAL_INSTANCE_PORT'
+            - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_STATION_FACING_BRIDGE_PORT'
+            - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_UPLINK_ACCESS_PORT'
+            - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_UPLINK_RELAY_PORT'
+            - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_NOT_YET_DEFINED'
+        default-vlan-id:
+          type: string
+        default-priority:
+          type: integer
+          format: int8
+        ingress-tag-filtering:
+          type: string
+          enum:
+            - 'vlan-interface-1-0:INGRESS_TAG_FILTERING_TYPE_UNTAGGED_AND_PRIORITY_FRAMES_ONLY'
+            - 'vlan-interface-1-0:INGRESS_TAG_FILTERING_TYPE_VLAN_TAGGED_FRAMES_ONLY'
+            - 'vlan-interface-1-0:INGRESS_TAG_FILTERING_TYPE_ALL_FRAMES'
+            - 'vlan-interface-1-0:INGRESS_TAG_FILTERING_TYPE_NOT_YET_DEFINED'
+        ingress-vlan-id-filtering-is-on:
+          type: boolean
+        pcp-bits-interpretation-kind:
+          type: string
+          enum:
+            - 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_8P0D'
+            - 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_7P1D'
+            - 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_6P2D'
+            - 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_5P3D'
+            - 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_NOT_YET_DEFINED'
+        pcp-bit-to-priority-mapping-list:
+          type: array
+          minItems: 0
+          maxItems: 8
+          x-key: to-be-decoded-pcp-bits-value
+          items:
+            type: object
+            required:
+              - to-be-decoded-pcp-bits-value
+              - associated-priority-value
+              - associated-drop-eligibility
+            properties:
+              to-be-decoded-pcp-bits-value:
+                type: integer
+                format: int8
+              associated-priority-value:
+                type: integer
+                minimum: -1
+                maximum: 7
+                format: int8
+              associated-drop-eligibility:
+                type: boolean
+        pcp-bits-encoding-mapping-list:
+          type: array
+          minItems: 0
+          maxItems: 16
+          x-key: to-be-encoded-priority-value to-be-encoded-drop-eligibility
+          items:
+            type: object
+            required:
+              - to-be-encoded-priority-value
+              - to-be-encoded-drop-eligibility
+              - associated-pcp-bits-value
+            properties:
+              to-be-encoded-priority-value:
+                type: integer
+                format: int8
+              to-be-encoded-drop-eligibility:
+                type: boolean
+              associated-pcp-bits-value:
+                type: integer
+                format: int8
+        drop-eligible-indicator-is-on:
+          type: boolean
+        drop-eligible-encoding-is-required:
+          type: boolean
+        received-priority-overwriting-is-on:
+          type: boolean
+        received-priority-overwriting-list:
+          type: array
+          minItems: 0
+          maxItems: 8
+          x-key: to-be-overwritten-priority-value
+          items:
+            type: object
+            required:
+              - to-be-overwritten-priority-value
+              - new-priority-value
+            properties:
+              to-be-overwritten-priority-value:
+                type: integer
+                format: int8
+              new-priority-value:
+                type: integer
+                format: int8
+        vlan-id-translation-is-on:
+          type: boolean
+        external-to-internal-vlan-id-mapping-list:
+          type: array
+          minItems: 0
+          x-key: external-vlan-id
+          items:
+            type: object
+            required:
+              - external-vlan-id
+              - internal-vlan-id
+            properties:
+              external-vlan-id:
+                type: integer
+                format: int16
+              internal-vlan-id:
+                type: integer
+                format: int16
+        egress-vlan-id-translation-is-on:
+          type: boolean
+        internal-to-egress-vlan-id-mapping-list:
+          type: array
+          minItems: 0
+          x-key: internal-vlan-id
+          items:
+            type: object
+            required:
+              - internal-vlan-id
+              - egress-vlan-id
+            properties:
+              internal-vlan-id:
+                type: integer
+                format: int16
+              egress-vlan-id:
+                type: integer
+                format: int16
+        forwarded-protocol-vlan-id-grouping-list:
+          type: array
+          minItems: 0
+          x-key: forwarded-protocol-group-id
+          items:
+            type: object
+            required:
+              - forwarded-protocol-group-id
+            properties:
+              forwarded-protocol-group-id:
+                type: integer
+                format: int32
+              forwarded-vlan-id-list:
+                type: array
+                minItems: 0
+                items:
+                  type: string
+        service-access-priority-tagging-is-on:
+          type: boolean
+        service-access-priority-mapping-list:
+          type: array
+          minItems: 0
+          maxItems: 8
+          x-key: c-vlan-priority-value
+          items:
+            type: object
+            required:
+              - c-vlan-priority-value
+              - s-vlan-pcp-bits-value
+            properties:
+              c-vlan-priority-value:
+                type: integer
+                format: int8
+              s-vlan-pcp-bits-value:
+                type: integer
+                format: int8
+        priority-to-traffic-class-mapping-list:
+          type: array
+          minItems: 0
+          maxItems: 8
+          x-key: priority-value
+          items:
+            type: object
+            required:
+              - priority-value
+              - traffic-class-value
+            properties:
+              priority-value:
+                type: integer
+                minimum: 0
+                maximum: 7
+                format: int8
+              traffic-class-value:
+                type: integer
+                minimum: -1
+                maximum: 7
+                format: int8
+        restricted-automated-vlan-registration-is-on:
+          type: boolean
+        admin-point-to-point:
+          type: string
+          enum:
+            - 'vlan-interface-1-0:ADMIN_POINT_TO_POINT_TYPE_FORCE_TRUE'
+            - 'vlan-interface-1-0:ADMIN_POINT_TO_POINT_TYPE_FORCE_FALSE'
+            - 'vlan-interface-1-0:ADMIN_POINT_TO_POINT_TYPE_AUTO'
+            - 'vlan-interface-1-0:ADMIN_POINT_TO_POINT_TYPE_NOT_YET_DEFINED'
+        forwarded-cvlan-id-to-svlan-id-list:
+          type: array
+          minItems: 0
+          x-key: c-vlan-id
+          items:
+            type: object
+            required:
+              - c-vlan-id
+              - s-vlan-id
+              - s-vlan-priority-kind
+              - fixed-svlan-priority
+              - untagged-pep
+              - untagged-cep
+            properties:
+              c-vlan-id:
+                type: integer
+                format: int16
+              s-vlan-id:
+                type: integer
+                format: int16
+              s-vlan-priority-kind:
+                type: string
+                enum:
+                  - 'vlan-interface-1-0:SVLAN_PRIORITY_KIND_TYPE_NONE'
+                  - 'vlan-interface-1-0:SVLAN_PRIORITY_KIND_TYPE_COPY'
+                  - 'vlan-interface-1-0:SVLAN_PRIORITY_KIND_TYPE_FIXED'
+                  - 'vlan-interface-1-0:SVLAN_PRIORITY_KIND_TYPE_NOT_YET_DEFINED'
+              fixed-svlan-priority:
+                type: integer
+                format: int16
+              untagged-pep:
+                type: boolean
+              untagged-cep:
+                type: boolean
+
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: operation-key
+    basicAuth:
+      type: http
+      scheme: basic

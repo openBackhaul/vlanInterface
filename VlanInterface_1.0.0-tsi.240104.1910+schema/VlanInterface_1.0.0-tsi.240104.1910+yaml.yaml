@@ -1,0 +1,388 @@
+vlan-interface-1-0:vlan-interface-capability:
+  type: object
+  required:
+    - vlan-interface-1-0:vlan-interface-capability
+  properties:
+    vlan-interface-1-0:vlan-interface-capability:
+      type: object
+      required:
+        - tagging-and-mvrp-is-avail
+        - configuring-ingress-tag-filtering-is-avail
+        - ingress-vlan-id-filtering-is-avail
+        - configuring-pcp-bits-decoding-is-avail
+        - configuring-pcp-bits-encoding-is-avail
+        - drop-eligible-indicator-is-avail
+        - number-of-available-priorities
+        - received-priority-overwriting-is-avail
+        - vlan-id-translation-is-avail
+        - egress-vlan-id-translation-is-avail
+        - port-and-protocol-based-vlan-is-avail
+        - max-number-of-protocol-vlan-id-groupings
+        - service-access-priority-tagging-is-avail
+        - configuring-service-access-priority-mapping-is-avail
+        - priority-to-traffic-class-mapping-is-avail
+        - number-of-available-traffic-classes
+        - restricted-automated-vlan-registration-is-avail
+        - admin-shut-down-is-avail
+        - untagged-pep-is-avail
+        - untagged-cep-is-avail
+      properties:
+        supported-sub-layer-protocol-name-list:
+          type: array
+          minItems: 0
+          items:
+            type: string
+            enum:
+              - 'vlan-interface-1-0:SUB_LAYER_PROTOCOL_NAME_TYPE_D_BRIDGE_COMPONENT'
+              - 'vlan-interface-1-0:SUB_LAYER_PROTOCOL_NAME_TYPE_C_VLAN_COMPONENT'
+              - 'vlan-interface-1-0:SUB_LAYER_PROTOCOL_NAME_TYPE_S_VLAN_COMPONENT'
+              - 'vlan-interface-1-0:SUB_LAYER_PROTOCOL_NAME_TYPE_EDGE_RELAY_COMPONENT'
+              - 'vlan-interface-1-0:SUB_LAYER_PROTOCOL_NAME_TYPE_NOT_YET_DEFINED'
+        supported-interface-kind-list:
+          type: array
+          minItems: 0
+          items:
+            type: string
+            enum:
+              - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_D_BRIDGE_PORT'
+              - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_C_VLAN_BRIDGE_PORT'
+              - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_CUSTOMER_EDGE_PORT'
+              - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_PROVIDER_EDGE_PORT'
+              - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_CUSTOMER_NETWORK_PORT'
+              - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_PROVIDER_NETWORK_PORT'
+              - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_CUSTOMER_BACKBONE_PORT'
+              - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_REMOTE_CUSTOMER_ACCESS_PORT'
+              - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_VIRTUAL_INSTANCE_PORT'
+              - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_STATION_FACING_BRIDGE_PORT'
+              - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_UPLINK_ACCESS_PORT'
+              - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_UPLINK_RELAY_PORT'
+              - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_NOT_YET_DEFINED'
+        tagging-and-mvrp-is-avail:
+          type: boolean
+        configuring-ingress-tag-filtering-is-avail:
+          type: boolean
+        ingress-vlan-id-filtering-is-avail:
+          type: boolean
+        available-pcp-bits-interpretation-kind-list:
+          type: array
+          minItems: 0
+          items:
+            type: string
+            enum:
+              - 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_8P0D'
+              - 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_7P1D'
+              - 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_6P2D'
+              - 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_5P3D'
+              - 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_NOT_YET_DEFINED'
+        configuring-pcp-bits-decoding-is-avail:
+          type: boolean
+        configuring-pcp-bits-encoding-is-avail:
+          type: boolean
+        drop-eligible-indicator-is-avail:
+          type: boolean
+        number-of-available-priorities:
+          type: integer
+          format: int8
+        received-priority-overwriting-is-avail:
+          type: boolean
+        vlan-id-translation-is-avail:
+          type: boolean
+        egress-vlan-id-translation-is-avail:
+          type: boolean
+        port-and-protocol-based-vlan-is-avail:
+          type: boolean
+        max-number-of-protocol-vlan-id-groupings:
+          type: integer
+          format: int16
+        service-access-priority-tagging-is-avail:
+          type: boolean
+        configuring-service-access-priority-mapping-is-avail:
+          type: boolean
+        priority-to-traffic-class-mapping-is-avail:
+          type: boolean
+        number-of-available-traffic-classes:
+          type: integer
+          format: int8
+        restricted-automated-vlan-registration-is-avail:
+          type: boolean
+        admin-shut-down-is-avail:
+          type: boolean
+        untagged-pep-is-avail:
+          type: boolean
+        untagged-cep-is-avail:
+          type: boolean
+vlan-interface-1-0:vlan-interface-configuration:
+  type: object
+  required:
+    - vlan-interface-1-0:vlan-interface-configuration
+  properties:
+    vlan-interface-1-0:vlan-interface-configuration:
+      type: object
+      required:
+        - interface-name
+        - sub-layer-protocol-name
+        - interface-kind
+        - default-vlan-id
+        - default-priority
+        - ingress-tag-filtering
+        - ingress-vlan-id-filtering-is-on
+        - pcp-bits-interpretation-kind
+        - drop-eligible-indicator-is-on
+        - drop-eligible-encoding-is-required
+        - received-priority-overwriting-is-on
+        - vlan-id-translation-is-on
+        - egress-vlan-id-translation-is-on
+        - service-access-priority-tagging-is-on
+        - restricted-automated-vlan-registration-is-on
+        - admin-point-to-point
+      properties:
+        interface-name:
+          type: string
+        sub-layer-protocol-name:
+          type: string
+          enum:
+            - 'vlan-interface-1-0:SUB_LAYER_PROTOCOL_NAME_TYPE_D_BRIDGE_COMPONENT'
+            - 'vlan-interface-1-0:SUB_LAYER_PROTOCOL_NAME_TYPE_C_VLAN_COMPONENT'
+            - 'vlan-interface-1-0:SUB_LAYER_PROTOCOL_NAME_TYPE_S_VLAN_COMPONENT'
+            - 'vlan-interface-1-0:SUB_LAYER_PROTOCOL_NAME_TYPE_EDGE_RELAY_COMPONENT'
+            - 'vlan-interface-1-0:SUB_LAYER_PROTOCOL_NAME_TYPE_NOT_YET_DEFINED'
+        interface-kind:
+          type: string
+          enum:
+            - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_D_BRIDGE_PORT'
+            - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_C_VLAN_BRIDGE_PORT'
+            - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_CUSTOMER_EDGE_PORT'
+            - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_PROVIDER_EDGE_PORT'
+            - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_CUSTOMER_NETWORK_PORT'
+            - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_PROVIDER_NETWORK_PORT'
+            - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_CUSTOMER_BACKBONE_PORT'
+            - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_REMOTE_CUSTOMER_ACCESS_PORT'
+            - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_VIRTUAL_INSTANCE_PORT'
+            - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_STATION_FACING_BRIDGE_PORT'
+            - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_UPLINK_ACCESS_PORT'
+            - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_UPLINK_RELAY_PORT'
+            - 'vlan-interface-1-0:INTERFACE_KIND_TYPE_NOT_YET_DEFINED'
+        default-vlan-id:
+          type: string
+        default-priority:
+          type: integer
+          format: int8
+        ingress-tag-filtering:
+          type: string
+          enum:
+            - 'vlan-interface-1-0:INGRESS_TAG_FILTERING_TYPE_UNTAGGED_AND_PRIORITY_FRAMES_ONLY'
+            - 'vlan-interface-1-0:INGRESS_TAG_FILTERING_TYPE_VLAN_TAGGED_FRAMES_ONLY'
+            - 'vlan-interface-1-0:INGRESS_TAG_FILTERING_TYPE_ALL_FRAMES'
+            - 'vlan-interface-1-0:INGRESS_TAG_FILTERING_TYPE_NOT_YET_DEFINED'
+        ingress-vlan-id-filtering-is-on:
+          type: boolean
+        pcp-bits-interpretation-kind:
+          type: string
+          enum:
+            - 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_8P0D'
+            - 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_7P1D'
+            - 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_6P2D'
+            - 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_5P3D'
+            - 'vlan-interface-1-0:PCP_BITS_INTERPRETATION_KIND_TYPE_NOT_YET_DEFINED'
+        pcp-bit-to-priority-mapping-list:
+          type: array
+          minItems: 0
+          maxItems: 8
+          x-key: to-be-decoded-pcp-bits-value
+          items:
+            type: object
+            required:
+              - to-be-decoded-pcp-bits-value
+              - associated-priority-value
+              - associated-drop-eligibility
+            properties:
+              to-be-decoded-pcp-bits-value:
+                type: integer
+                format: int8
+              associated-priority-value:
+                type: integer
+                minimum: -1
+                maximum: 7
+                format: int8
+              associated-drop-eligibility:
+                type: boolean
+        pcp-bits-encoding-mapping-list:
+          type: array
+          minItems: 0
+          maxItems: 16
+          x-key: to-be-encoded-priority-value to-be-encoded-drop-eligibility
+          items:
+            type: object
+            required:
+              - to-be-encoded-priority-value
+              - to-be-encoded-drop-eligibility
+              - associated-pcp-bits-value
+            properties:
+              to-be-encoded-priority-value:
+                type: integer
+                format: int8
+              to-be-encoded-drop-eligibility:
+                type: boolean
+              associated-pcp-bits-value:
+                type: integer
+                format: int8
+        drop-eligible-indicator-is-on:
+          type: boolean
+        drop-eligible-encoding-is-required:
+          type: boolean
+        received-priority-overwriting-is-on:
+          type: boolean
+        received-priority-overwriting-list:
+          type: array
+          minItems: 0
+          maxItems: 8
+          x-key: to-be-overwritten-priority-value
+          items:
+            type: object
+            required:
+              - to-be-overwritten-priority-value
+              - new-priority-value
+            properties:
+              to-be-overwritten-priority-value:
+                type: integer
+                format: int8
+              new-priority-value:
+                type: integer
+                format: int8
+        vlan-id-translation-is-on:
+          type: boolean
+        external-to-internal-vlan-id-mapping-list:
+          type: array
+          minItems: 0
+          x-key: external-vlan-id
+          items:
+            type: object
+            required:
+              - external-vlan-id
+              - internal-vlan-id
+            properties:
+              external-vlan-id:
+                type: integer
+                format: int16
+              internal-vlan-id:
+                type: integer
+                format: int16
+        egress-vlan-id-translation-is-on:
+          type: boolean
+        internal-to-egress-vlan-id-mapping-list:
+          type: array
+          minItems: 0
+          x-key: internal-vlan-id
+          items:
+            type: object
+            required:
+              - internal-vlan-id
+              - egress-vlan-id
+            properties:
+              internal-vlan-id:
+                type: integer
+                format: int16
+              egress-vlan-id:
+                type: integer
+                format: int16
+        forwarded-protocol-vlan-id-grouping-list:
+          type: array
+          minItems: 0
+          x-key: forwarded-protocol-group-id
+          items:
+            type: object
+            required:
+              - forwarded-protocol-group-id
+            properties:
+              forwarded-protocol-group-id:
+                type: integer
+                format: int32
+              forwarded-vlan-id-list:
+                type: array
+                minItems: 0
+                items:
+                  type: string
+        service-access-priority-tagging-is-on:
+          type: boolean
+        service-access-priority-mapping-list:
+          type: array
+          minItems: 0
+          maxItems: 8
+          x-key: c-vlan-priority-value
+          items:
+            type: object
+            required:
+              - c-vlan-priority-value
+              - s-vlan-pcp-bits-value
+            properties:
+              c-vlan-priority-value:
+                type: integer
+                format: int8
+              s-vlan-pcp-bits-value:
+                type: integer
+                format: int8
+        priority-to-traffic-class-mapping-list:
+          type: array
+          minItems: 0
+          maxItems: 8
+          x-key: priority-value
+          items:
+            type: object
+            required:
+              - priority-value
+              - traffic-class-value
+            properties:
+              priority-value:
+                type: integer
+                minimum: 0
+                maximum: 7
+                format: int8
+              traffic-class-value:
+                type: integer
+                minimum: -1
+                maximum: 7
+                format: int8
+        restricted-automated-vlan-registration-is-on:
+          type: boolean
+        admin-point-to-point:
+          type: string
+          enum:
+            - 'vlan-interface-1-0:ADMIN_POINT_TO_POINT_TYPE_FORCE_TRUE'
+            - 'vlan-interface-1-0:ADMIN_POINT_TO_POINT_TYPE_FORCE_FALSE'
+            - 'vlan-interface-1-0:ADMIN_POINT_TO_POINT_TYPE_AUTO'
+            - 'vlan-interface-1-0:ADMIN_POINT_TO_POINT_TYPE_NOT_YET_DEFINED'
+        forwarded-cvlan-id-to-svlan-id-list:
+          type: array
+          minItems: 0
+          x-key: c-vlan-id
+          items:
+            type: object
+            required:
+              - c-vlan-id
+              - s-vlan-id
+              - s-vlan-priority-kind
+              - fixed-svlan-priority
+              - untagged-pep
+              - untagged-cep
+            properties:
+              c-vlan-id:
+                type: integer
+                format: int16
+              s-vlan-id:
+                type: integer
+                format: int16
+              s-vlan-priority-kind:
+                type: string
+                enum:
+                  - 'vlan-interface-1-0:SVLAN_PRIORITY_KIND_TYPE_NONE'
+                  - 'vlan-interface-1-0:SVLAN_PRIORITY_KIND_TYPE_COPY'
+                  - 'vlan-interface-1-0:SVLAN_PRIORITY_KIND_TYPE_FIXED'
+                  - 'vlan-interface-1-0:SVLAN_PRIORITY_KIND_TYPE_NOT_YET_DEFINED'
+              fixed-svlan-priority:
+                type: integer
+                format: int16
+              untagged-pep:
+                type: boolean
+              untagged-cep:
+                type: boolean
+
